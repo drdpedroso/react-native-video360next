@@ -1,4 +1,4 @@
-
+#import "React/RCTView.h"
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, DemoType) {
@@ -17,6 +17,8 @@ typedef NS_ENUM(NSUInteger, DemoType) {
 
 @property (nonatomic) DemoType demoType;
 @property (nonatomic) NSString* urlVideo;
+@property (nonatomic, copy) RCTDirectEventBlock onSGEnded;
+
 -(void)cardBoardType:(int)cardType;
 
 @end

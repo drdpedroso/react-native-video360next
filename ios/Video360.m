@@ -36,6 +36,15 @@
   }
 }
 
+
+- (void)setOnSGEnded:(RCTDirectEventBlock)onSGEnded
+{
+    _onSGEnded = onSGEnded;
+    NSLog(@"%@", onSGEnded);
+    _playerView.onSGEnded = onSGEnded;
+}
+
+
 - (void)setModeVideo:(int)modeVideo
 {
   if( modeVideo != _modeVideo  )
@@ -55,10 +64,6 @@
       }
   }
 }
-
-
-
-
 
 
 @end

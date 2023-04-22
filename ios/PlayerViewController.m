@@ -1,5 +1,10 @@
 
 #import "PlayerViewController.h"
+#import "React/RCTConvert.h"
+#import "React/RCTBridgeModule.h"
+#import "React/RCTEventEmitter.h"
+#import "React/RCTEventDispatcher.h"
+#import "UIView+React.h"
 #import <SGPlayer/SGPlayer.h>
 
 @interface PlayerViewController ()
@@ -217,6 +222,11 @@
             [self.playObject setSelected:false];
             self.progressSilder.value=0;
             self.currentTimeLabel.text = [self timeStringFromSeconds:0];
+            NSLog(@"QUASE ENTREI");
+            if (self.onSGEnded) {
+                NSLog(@"ENTREI PORRA");
+                self.onSGEnded(@{ @"target": self.progressSilder });
+            }
             text = @"Terminado";
             break;
         case SGPlayerStateFailed:
